@@ -29,22 +29,30 @@ Speedup is measured against the unoptimized kernel.
 
 It is apparent that the tiling method with a matrix size of 8 yields the highest speedup (2.7x) compared with the unoptimized matrix multiplication, saving nearly 2.5 seconds of execution time. It is interesting to note, however, with tile sizes above 256, there is a trend in execution time that is taking longer than the unoptimized matrix multiplication.
 
-## Compilation and Execution
+## Compilation and Usage
 
 To compile the program:
->```gcc -g -o matmul -Wall -O3 matmul.c -lm```
+```console
+$ gcc -g -o matmul -Wall -O3 matmul.c -lm
+```
 
 Usage:
->```./matmul [runTimes] [power]```
+```console
+$ ./matmul [runTimes] [power]
+```
 
 where `runTimes` = number of times to run the tests
 and `power` = the number of tiles in powers of 2
 
 
 for example, to run it 5 times with 1-1024 tiles:
->```./matmul 5 10```
+```console
+$ ./matmul 5 10
+```
 
 or to run it 1 time with 1-64 tiles:
->```./matmul 1 6```
+```console
+$ ./matmul 1 6
+```
 
 At the end of running, a summary with average times from each test is printed to stdout.
